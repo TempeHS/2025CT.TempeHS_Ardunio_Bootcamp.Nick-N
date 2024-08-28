@@ -47,18 +47,20 @@ void setup() {
 
 void loop()
 {
-if (digitalRead(buttonPin == LOW))
-{
-if (digitalRead(lineSensorPin == LOW))
+Serial.println(analogRead(A3));
+if (analogRead(A3)  == 0)
 {
   digitalWrite(ledPin, HIGH);
- delay(50);
-
-} else
+} else if (analogRead(A3) >= 4)
+{
+  digitalWrite(ledPin, LOW);
+}
+ else if (analogRead(A3)  >= 5)
   {
     digitalWrite(ledPin, LOW);
   }
 }
+
 
 
 
