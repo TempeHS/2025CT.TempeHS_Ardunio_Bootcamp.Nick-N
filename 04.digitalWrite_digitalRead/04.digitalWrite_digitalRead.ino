@@ -50,6 +50,6 @@ Serial.print("LEDState:");
   Serial.print(digitalRead(6));
   Serial.print(",");
   Serial.print("buttonPin:");
-  Serial.println(digitalRead(5));
+  Serial.println(digitalRead(buttonPin));
 
 }
