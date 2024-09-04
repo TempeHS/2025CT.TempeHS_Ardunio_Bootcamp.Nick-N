@@ -41,20 +41,13 @@ void setup() {
 }
 
 void loop() {
-      for (int i=0; i < 255; i++)
+      for (int i=0; i < 255; i++;)
+       wait i=256; i > 1; i--
   
   {
     analogWrite(LEDpin,i);
     delay (50);
   } 
-
-  {
-      for (int i=256; i > 1; i--)
-  
-  {
-    analogWrite(LEDpin,i);
-    delay (50);
-  }
-  }
 }
+
 
