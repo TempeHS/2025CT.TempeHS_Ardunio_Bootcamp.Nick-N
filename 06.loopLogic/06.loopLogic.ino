@@ -34,20 +34,62 @@
   Schematic: 
     
 */
+
+#define LEDpin 3
+#define BTNpin 4
+
+void setup()
+{
+  pinMode(BTNpin, INPUT);
+  pinMode(LEDpin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() 
+{
+ do {
+    digitalWrite (LEDpin, HIGH);
+    Serial.println("Looping");
+
+}
+while (digitalRead(BTNpin) < 1);
+
+  digitalWrite(LEDpin, LOW);
+  Serial.println("Loop is skipped");
+}
+
+
+/*
+
+  while (digitalRead(BTNpin) > 0){
+    digitalWrite (LEDpin, HIGH);
+    Serial.println("Looping");
+
+}
+  digitalWrite(LEDpin, LOW);
+  Serial.println("Loop is skipped");
+
 static unsigned int LEDpin = 3;
 
-void setup() {
+void setup() 
+{
   pinMode(LEDpin, OUTPUT);
 }
 
 void loop() {
-      for (int i=0; i < 255; i++;)
-       wait i=256; i > 1; i--
-  
-  {
-    analogWrite(LEDpin,i);
-    delay (50);
-  } 
+      for (int i=0; i < 256; i++) 
+      {
+        analogWrite(LEDpin, i);
+        delay (50);
+      }
+      if (int i=256)
+      {
+        int i=256;
+        analogWrite(LEDpin, i--);
+        delay (50);
+      }
 }
+*/
+
 
 
