@@ -28,7 +28,7 @@
 #include <Servo.h>
 
 Servo myservo;
-Ultrasonic Rexr(5);
+Ultrasonic Wensor(5);
 
 unsigned static int servoPin = 7;
 unsigned static int potpin = A2;
@@ -40,10 +40,22 @@ void setup()
 }
 
 void loop() {
-Serial.println(Rexr.distanceRead());
-if Rexr <= 10
+Serial.println(Wensor.distanceRead());
 
-  int val = analogRead(potpin);
-  val = map(val, 0, 1023, 0, 180);
-  myservo.write(val);
+  if (Wensor.distanceRead() <= 10){
+    delay(100);
+    myservo.write(0);
+    delay(30000);
+    myservo.write(90);
+
+  }
+ else if (Wensor.distanceRead() >= 10){
+  myservo.write(90);
+ }
 }
+
+
+
+/*  int val = analogRead(potpin);
+  val = map(val, 0, 1023, 0, 180);
+  myservo.write(val);*/
