@@ -45,7 +45,7 @@ Serial.println(Wensor.distanceRead());
   if (Wensor.distanceRead() <= 10){
     delay(100);
     myservo.write(0);
-    delay(30000);
+    delay(10000);
     myservo.write(90);
 
   }
