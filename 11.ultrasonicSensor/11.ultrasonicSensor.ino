@@ -42,16 +42,14 @@ void setup()
 void loop() {
 Serial.println(Wensor.distanceRead());
 
-  if (Wensor.distanceRead() <= 10){
-    delay(100);
-    myservo.write(0);
-    delay(10000);
-    myservo.write(90);
+unsigned long currentMillis = millis();
 
-  }
- else if (Wensor.distanceRead() >= 10){
-  myservo.write(90);
+  if (Wensor.distanceRead() <= 10){
+ myservo.write(0);
+ if (millis() >= 10000){
+  myservo.write(0);
  }
+  }
 }
 
 
